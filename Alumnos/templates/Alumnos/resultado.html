@@ -1,0 +1,32 @@
+{% extends "Alumnos/base.html" %}
+{% load static %}
+
+{%block estilos%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/resultados.css' %}">
+{%endblock%}
+
+{% block titulo %}
+Resultados
+{%endblock%}
+
+{% block banner %}
+<h1><a href="/" style="margin-left:5px;color:white; text-decoration:none; float:left"><i class="fas fa-arrow-alt-circle-left"></i></a>Lista de Alumnos <a href="/admin" style="margin-right:5px;color:white; text-decoration:none; float:right"><i class="fas fa-users-cog"></i></a></h1>
+{% endblock%}
+
+{% block contenido%}
+
+{% for objecto in Alumnos%}
+<div class="info">
+    <p id="Maticula"> <br/>Matricula: {{objecto.Num_count}}</p>
+    <p id="Nombre">Nombre: {{objecto.Nombre}}</p>
+    <p id="Edad">Edad: {{objecto.Edad}}</p>
+    <p id="Sexo">Sexo: {{objecto.Sexo}}</p>
+    <p id="Fecha">Fecha de Nacimiento: {{objecto.FechaNacimiento}}</p>
+    <p id="Telefono">Telefono: {{objecto.Telefono}}</p>
+    <p id="Email">Email: {{objecto.Email}}</p>
+    <p id="Dir">Dirección: {{objecto.Domicilio}} <br/> <br/></p>
+
+</div>
+{% endfor %}
+
+{% endblock %}
